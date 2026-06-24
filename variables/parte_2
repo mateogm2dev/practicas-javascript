@@ -1,0 +1,27 @@
+//parte a
+const selecciones = ["Argentina", "Francia", "Brasil", "Alemania", "España"];
+
+for (let i = 0; i < selecciones.length; i++) {
+  console.log( (i+1) + ". " + selecciones[i]);  
+}
+
+
+
+//parte b
+const selecciones = ["Argentina", "Francia", "Brasil", "Alemania", "España"];
+let posicion = 1;
+
+for(const equipo of selecciones){
+    console.log(posicion + ". " + equipo)
+    posicion++
+}
+
+//parte c
+
+// ¿Cuándo conviene usar for con índice?
+
+// cuando se tiene que usar el indice en el for ademas de en el for
+
+// ¿Cuándo conviene usar for...of?
+
+//cuando el indice no se necesita, ya que es mas limpio, mas legible y causa menos errores

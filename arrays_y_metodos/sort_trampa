@@ -1,0 +1,16 @@
+//parte a
+
+const edades = [9, 15, 11, 8, 21, 17, 100];
+console.log(edades.sort()); //resultado : ["100", "11", "15", "17", "21", "8", "9"]
+
+//el sort falla porque no ordena como numero, sino que filtra como string
+
+//parte b
+
+const edades = [9, 15, 11, 8, 21, 17, 100];
+console.log(edades.sort((a,b) => a - b));
+
+//parte c
+
+const edades = [9, 15, 11, 8, 21, 17, 100];
+console.log(edades.sort((a,b) => b - a));

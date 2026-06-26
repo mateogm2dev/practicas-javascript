@@ -12,6 +12,26 @@ const jugadores = [
 
 //parte a
 
-const goleadores = jugadores.filter( j => j.goles > 2)
+const goleadores = jugadores.filter( j => j.goles > 2);
 
-console.log(goleadores)
+console.log(goleadores);
+
+// parte b
+
+const nombres = jugadores.map(j => j.nombre);
+
+console.log(nombres)
+
+//parte c
+
+const nombres_goleadores = jugadores
+  .filter  (j => j.goles > 2)
+  .map (j => j.nombre);
+
+console.log(nombres_goleadores);
+
+//parte d
+
+const frances = jugadores.find(j => j.pais === "Francia");
+
+console.log(frances);

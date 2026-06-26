@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <ul id="lista_grupos"></ul>
+    
+    <script>
+        const grupos = ["Grupo A", "Grupo B", "Grupo C", "Grupo D", "Grupo E"];
+        document.createElement("li")
+
+        for (const grupo of grupos) {
+
+            const item = document.createElement("li");
+            item.textContent = grupo;
+
+
+            const lista = document.querySelector("#lista_grupos");
+
+
+            lista.appendChild(item);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="boton">click</button>
+    <p><span id="marcador">...</span></p>
+
+
+    <script>
+        const boton = document.querySelector("#boton");
+        const marcador = document.querySelector("#marcador");
+        let goles = 0;
+        function gol() {
+            goles++;
+        }
+
+        boton.addEventListener("click", gol => {
+            marcador.textContent = goles;
+        });
+
+
+            
+    </script>
+</body>
+
+</html>

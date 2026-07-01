@@ -78,35 +78,25 @@
 
     function validarNombre(nombre) {
       nombre = nombre.trim();
-
-      if (nombre === "") {
-        errorNombre.textContent = "Debe ingresar un nombre.";
-        return false;
-      }
-
-      if (nombre.length < 3) {
-        errorNombre.textContent = "Debe tener al menos 3 letras.";
-        return false;
-      }
-
-      if (tieneNumero(nombre)) {
-        errorNombre.textContent = "El nombre no puede contener números.";
-        return false;
-      }
-
-      errorNombre.textContent = "";
-      return true;
+      if (nombre === "") return "Debe ingresar un nombre.";
+      if (nombre.length < 3) return "Debe tener al menos 3 letras.";
+      if (tieneNumero(nombre)) return "El nombre no puede contener números.";
+      return null;
     }
+    // en el handler:
+
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
       const texto = inputNombre.value;
+      const error = validarNombre(inputNombre.value);
 
+      errorNombre.textContent = error || "";
       if (validarNombre(texto)) {
         resultado.textContent = "Escribiste: " + texto;
       } else {
-        resultado.textContent = "";
+        errorNombre.textContent = error || "";
       }
     });
   </script>

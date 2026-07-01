@@ -134,10 +134,12 @@
   <p id="sin-resultados">No hay jugadores que coincidan con la búsqueda.</p>
 
   <script>
+
     buscador.addEventListener("input", () => {
       const busqueda = buscador.value.toLowerCase();
       const tarjetas = document.querySelectorAll(".jugador");
-
+      const buscador = document.querySelector("#buscador");
+      
       let hayResultados = false;
 
       for (const tarjeta of tarjetas) {

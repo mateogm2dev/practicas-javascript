@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica 02 — Validar un nombre</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 420px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 8px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    #error {
+      color: red;
+      margin-top: 8px;
+      min-height: 1.2em;
+    }
+
+    #resultado {
+      margin-top: 16px;
+      font-size: 1.1rem;
+      color: #1a7a1a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Práctica 02</h1>
+  <p>Ingresá tu nombre. Se validará antes de aceptarlo.</p>
+
+  <form id="miForm">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" placeholder="Ej: María">
+    <p id="error"></p>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p id="resultado"></p>
+
+  <script>
+    const form = document.querySelector("#miForm");
+    const inputNombre = document.querySelector("#nombre");
+    const errorNombre = document.querySelector("#error");
+    const resultado = document.querySelector("#resultado");
+
+    function tieneNumero(texto) {
+      for (const caracter of texto) {
+        if (caracter >= "0" && caracter <= "9") {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    function validarNombre(nombre) {
+      nombre = nombre.trim();
+      if (nombre === "") return "Debe ingresar un nombre.";
+      if (nombre.length < 3) return "Debe tener al menos 3 letras.";
+      if (tieneNumero(nombre)) return "El nombre no puede contener números.";
+      return null;
+    }
+    // en el handler:
+
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const texto = inputNombre.value;
+      const error = validarNombre(inputNombre.value);
+
+      errorNombre.textContent = error || "";
+      if (validarNombre(texto)) {
+        resultado.textContent = "Escribiste: " + texto;
+      } else {
+        errorNombre.textContent = error || "";
+      }
+    });
+  </script>
+
+</body>
+
+</html>
